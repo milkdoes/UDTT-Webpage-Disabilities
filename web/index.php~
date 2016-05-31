@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Principal</title>
+</head>
+<body>
+
+   <?php require 'header.html';?>
+
+   <p>
+   Bienvenido a <i>Un-disabled to Talk</i>, un portal con ayuda extra a personas que
+   necesitan mas informacion sobre el lugar donde estan localizados.
+	</p>
+
+   <?php include 'footer.html';?>
+
+</body>
+</html>

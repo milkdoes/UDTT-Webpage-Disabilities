@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UDTT</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_enter">Entrar</string>
+    <string name="label_help">¿Un poco de ayuda?</string>
+    <string name="label_about">Sobre</string>
+</resources>

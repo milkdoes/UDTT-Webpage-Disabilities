@@ -1,0 +1,52 @@
+CREATE DATABASE UDTT;
+-- GO
+
+USE UDTT;
+-- GO
+
+-- Disabilidades:
+-- Vision
+-- Movimiento
+-- Pensamiento
+-- Memoria
+-- Aprendimiento
+-- Comunicacion
+-- Audicion
+-- Salud Mental
+-- Relaciones Sociales
+
+CREATE TABLE SeccionMapa
+(
+	-- Reservar la parte 0 para el mapa completo.
+	ID_SeccionMapa tinyint PRIMARY KEY
+	, Seccion varchar(100) NOT NULL
+	-- , Imagen_Seccion image NOT NULL
+);
+-- GO
+
+CREATE TABLE Observacion
+(
+	ID_Observacion smallint PRIMARY KEY
+	, Titulo varchar(100) NOT NULL
+   , Descripcion varchar(MAX) NULL
+	, Correo varchar(320) NULL	
+);
+-- GO
+
+CREATE TABLE Regulacion
+(
+	ID_Regulacion smallint PRIMARY KEY
+	, Titulo varchar(100) NOT NULL
+	, Descripcion varchar(MAX) NOT NULL
+	-- Para quien aplica la regulacion
+	, Vision bit NOT NULL
+	, Movimiento bit NOT NULL
+	, Pensamiento bit NOT NULL
+	, Memoria bit NOT NULL
+	, Aprendimiento bit NOT NULL
+	, Comunicacion bit NOT NULL
+	, Audicion bit NOT NULL
+	, Salud_Mental bit NOT NULL
+	, Relaciones_Sociales bit NOT NULL
+);
+-- GO

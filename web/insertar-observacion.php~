@@ -1,0 +1,39 @@
+<?php
+if ($_POST["titulo"] != "") {
+	$servername = "localhost";
+	$username = "root";
+	$password = "1983";
+	$dbname = "UDTT";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "INSERT INTO Observacion (Titulo, Descripcion, Correo) VALUES ('"
+	   . $_POST["titulo"] . "','" . $_POST["descripcion"] . "','" . $_POST["correo"] . "');";
+
+   if ($conn->query($sql) === TRUE) {
+      require 'header.html';
+      echo "Observacion enviada exitosamente. Redireccionando....";
+      require 'footer.html';
+      echo "<script>setTimeout(\"location.href = 'observaciones.php';\", 4500);</script>";
+   } else {
+      require 'header.html';
+      echo "Error: " . $sql . "<br>" . $conn->error;
+      require 'footer.html';
+      echo "<script>setTimeout(\"location.href = 'observaciones.php';\", 2000);</script>";
+	}
+
+	$conn->close();
+}
+else{
+   require 'header.html';
+   echo "Por favor ingrese por lo minimo el titulo a la observacion. Redireccionando...";
+   require 'footer.html';
+	echo "<script>setTimeout(\"location.href = 'observaciones.php';\", 5000);</script>";
+}
+
+?>
